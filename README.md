@@ -1,2 +1,4 @@
 # Improved-Generalized-Good-Lattice-Point-Sets
 This is the source codes of "Some Improvements on Good Lattice Point Sets" to be submitted to Entropy.
+
+Run AppGGLP.py to calculate generalized good lattice point (GGLP) sets. The initial good lattice point (GLP) sets are specified with generating vectors in this file as dictionary. Modifying n, s, K, h_values can get new GGLP sets. The space-filling criterion can be chose from mixture discrepancy (MD), maximin distance, and Frobenius distance. All these criteria and threshold accepting algorithm are defined in TAGLP.py. The parameters in Algorithm1 function, disc and FD, can be used to specify the criterion, where disc=True implies adopting MD to be minimized and otherwise adopting maximin distance to be maximized, and FD=True implies replacing MD with Frobenius distance. The outputs are all printed out after running. 

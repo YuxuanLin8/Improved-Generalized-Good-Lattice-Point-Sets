@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-# Good Lattice Point(GLP)
+# Good Lattice Points(GLP)
 def GLP(n, s, generator=None):
     nvec = np.arange(1, n + 1)  # Create an array from 1 to n
     m = len(generator)  # Length of the generator
@@ -16,7 +16,7 @@ def GLP(n, s, generator=None):
     Um = Um.reshape(len(nvec), len(generator))
     return Um, generator
 
-# Function to add a row vector to each row of a matrix and take modulo n
+# Generalized Good Lattice Points(GGLP)
 def GGLP(Um, row_vector, n):
     Um = (Um + row_vector) % n
     Um[Um == 0] = n
@@ -49,7 +49,7 @@ def generate_mixed_normal_samples_GLP(mu1, sigma1, mu2, sigma2, alpha, n, GLP1):
 
     return np.array(samples)
 
-# Generate  samples for a mixture of two normals using GGLP method
+# Generate samples for a mixture of two normals using GGLP method
 def generate_mixed_normal_samples_GGLP(mu1, sigma1, mu2, sigma2, alpha, n, GGLP1):
     A1 = np.linalg.cholesky(sigma1)  # Cholesky decomposition of sigma1
     A2 = np.linalg.cholesky(sigma2)  # Cholesky decomposition of sigma2
@@ -117,7 +117,7 @@ def estimate_mean_and_covariance(samples):
     s_hat /= k
     return mu_hat, s_hat
 
-#Main Function
+# Main Function
 def main():
     mixtures = [
         {

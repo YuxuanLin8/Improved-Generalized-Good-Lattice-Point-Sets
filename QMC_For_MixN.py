@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-# Good Lattice Points(GLP)
+# Good Lattice Points (GLP)
 def GLP(n, s, generator=None):
     nvec = np.arange(1, n + 1)  # Create an array from 1 to n
     m = len(generator)  # Length of the generator
@@ -16,7 +16,7 @@ def GLP(n, s, generator=None):
     Um = Um.reshape(len(nvec), len(generator))
     return Um, generator
 
-# Generalized Good Lattice Points(GGLP)
+# Generalized Good Lattice Points (GGLP)
 def GGLP(Um, row_vector, n):
     Um = (Um + row_vector) % n
     Um[Um == 0] = n
